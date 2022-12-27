@@ -17,8 +17,13 @@ export class HeaderComponent implements OnChanges  {
    this.headerMessage=this.displayMessage;
 
   }
+  dateformatter()
+  {
+    let dt = new Date()
+    return dt.getDate().toString()+"-"+(dt.getMonth()+1).toString()+"-"+dt.getFullYear().toString()+"-"+dt.getHours().toString()+"-"+dt.getMinutes().toString()+"-"+dt.getSeconds().toString();
+  }
   ngOnChanges() {
-    this.headerMessage=this.displayMessage+" " +new Date().getDay()
+    this.headerMessage=this.displayMessage+" " +this.dateformatter();
   }
 }
 
